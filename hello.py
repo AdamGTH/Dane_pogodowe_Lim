@@ -15,7 +15,8 @@ blogposts = {1: "blogpost1", 2: "blogpost2"}
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return render_template("index.html", temp=temp, hum=humid)
+   # return "<p>Hello, World!</p>"
 
 @app.route("/test")
 def another_hello():
