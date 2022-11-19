@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from markupsafe import escape
 from dane_pogoda import temp_lim
+import os
 
 temp = round(temp_lim["temp"] - 272.15, 2)
 humid = temp_lim["humidity"]
@@ -38,8 +39,6 @@ def show_subpath(subpath):
     return f'Subpath {escape(subpath)}'
 
 
-@app.route('/test_for/')
-def show_post(post_id):
-    # show the post with the given id, the id is an integer
-    foo = sta
-    return render_template("blogpost.html", foo = foo)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, use_reloader=True)  
