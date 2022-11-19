@@ -1,11 +1,11 @@
 from flask import Flask
 from flask import render_template
 from markupsafe import escape
-from dane_pogoda import temp_lim
+from dane_pogoda import weath_lim
 import os
 
-temp = round(temp_lim["temp"] - 272.15, 2)
-humid = temp_lim["humidity"]
+weather = weath_lim
+humid = weath_lim["humidity"]
 
 sta = ['jeden', 'dwa', 'trzy', 'cztery']
 
@@ -15,13 +15,12 @@ blogposts = {1: "blogpost1", 2: "blogpost2"}
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html", temp=temp, hum=humid)
+    return render_template("index.html", data = weather)
    # return "<p>Hello, World!</p>"
 
 @app.route("/test")
 def another_hello():
-    
-    return render_template("index.html", temp=temp, hum=humid)
+    return render_template("blogpost.html", fo=sta)
 
 @app.route('/user/<username>')
 def show_user_profile(username):

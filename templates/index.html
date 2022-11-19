@@ -4,10 +4,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"/>
   </head>
   <body>
-    <h1> DANE POGODOWE </h1>
-    <article>  TemperaturaLimanowa  {{ temp }} <br><br>
-               Wilgotnosc {{ hum }}
-
+    <h1> LIMANOWA - DANE POGODOWE </h1>
+    <article>  
+      {% for key, val in data.items() %}
+      <li>{{key}} : {{val}}</li>
+      {% endfor %}
     </article>
 
   </body>
