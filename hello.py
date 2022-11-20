@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import render_template
 from markupsafe import escape
-from dane_pogoda import weath_lim
+from dane_pogoda import weath_lim, dd_mm_rrrr, time_sunset, time_sunrise
 import os
 
 weather = weath_lim
+date = dd_mm_rrrr
 
 sta = ['jeden', 'dwa', 'trzy', 'cztery']
 
@@ -14,7 +15,7 @@ blogposts = {1: "blogpost1", 2: "blogpost2"}
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html", data = weather)
+    return render_template("index.html", weather = weather, date = date, sunrise = time_sunrise, sunset = time_sunset )
    # return "<p>Hello, World!</p>"
 
 @app.route("/test")

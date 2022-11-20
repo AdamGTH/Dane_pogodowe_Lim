@@ -4,12 +4,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.5.min.css"/>
   </head>
   <body style="background-color: silver">
-    <h1> LIMANOWA - DANE POGODOWE </h1>
-    <article style="background-color: teal; color: blue">  
-      {% for key, val in data.items() %}
+    <h1>Limanowa informacje</h1>
+  Dzisiejsza data: {{date}}
+  </br>
+  Wschód słońca: {{sunrise}}
+  </br>
+  Zachód słońca: {{sunset}}
+  </br>
+  <script type="text/javascript" src="https://imienniczek.pl/widget/js"></script>
+  </br>
+  <span style = "color: black"> Dane pogodowe dla Limanowej:</span>
+    <article style="background-color: gray; color: blue">  
+      {% for key, val in weather.items() %}
       <li>{{key}} : {{val}}</li>
       {% endfor %}
+    
     </article>
 
+    <span style = "color: black"> 
+      źródło danych: <a href = "https://openweathermap.org/" target="_blank">https://openweathermap.org/</a>
+      <br>
+      Jeśli chesz wiedzieć więcej o Limanowej, to kliknij <a href = "https://pl.wikipedia.org/wiki/Limanowa" target="_blank">tutaj</a>
+
+    </span>  
   </body>
 </html>
