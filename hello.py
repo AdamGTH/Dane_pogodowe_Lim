@@ -5,7 +5,6 @@ from dane_pogoda import weath_lim
 import os
 
 weather = weath_lim
-humid = weath_lim["humidity"]
 
 sta = ['jeden', 'dwa', 'trzy', 'cztery']
 
