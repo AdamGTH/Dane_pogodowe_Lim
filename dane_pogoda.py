@@ -31,9 +31,17 @@ for idx, num in enumerate(weath_lim_num):
 
 ######################################################################################
 ##################### wyciąganie daty i czasu ########################################
-from datetime import date
+from datetime import date, datetime
 
 dd_mm_rrrr = date.today()
+
+currentDateAndTime = datetime.now()
+
+#print("The current date and time is", currentDateAndTime)
+# Output: The current date and time is 2022-03-19 10:05:39.482383
+#currentTime = currentDateAndTime.strftime("%H:%M:%S")
+#print("The current time is", currentTime)
+# The current time is 10:06:55
 
 ######################################################################################
 ##################### obliczanie wschodu i zachodu słonca z czasu unixowego ##########
@@ -50,3 +58,6 @@ time_sunset_hour = int(time_sunset_hour)
 
 time_sunrise = '{:02d}:{:02d}'.format(time_sunrise_hour, time_sunrise_min)
 time_sunset = '{:02d}:{:02d}'.format(time_sunset_hour, time_sunset_min)
+
+#################################################################################
+
