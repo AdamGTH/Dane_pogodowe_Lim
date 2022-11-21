@@ -31,31 +31,9 @@ for idx, num in enumerate(weath_lim_num):
 
 ######################################################################################
 ##################### wyciąganie daty i czasu ########################################
-dd_mm_rrrr = ''
-year = dt_time_info/31556926 + 1970
-month = (year-int(year)) * 12
-day_in_month = {'Jan':31, 'Feb':[28,29], 'march':31, 'april':30, 'May':31, 'June':30,'July':31, 'August':31, 'Sept':30,'Oct':30, 'Nov':30, 'Dec':31}
-month_actual = ''
-month_number = 0
+from datetime import date
 
-for idx, x in enumerate(day_in_month):
-    if idx+1 < month:
-        continue
-    else:
-        month_actual = x
-        month_number = idx+1
-        break
-    
-day = (month-int(month))*day_in_month[month_actual]
-
-for x in range(1, day_in_month[month_actual]):
-    if x < day:
-        continue
-    else:
-        day = x
-        break
-
-dd_mm_rrrr = str(day)+"-"+str(month_number)+"-"+str(int(year))
+dd_mm_rrrr = date.today()
 
 ######################################################################################
 ##################### obliczanie wschodu i zachodu słonca z czasu unixowego ##########
