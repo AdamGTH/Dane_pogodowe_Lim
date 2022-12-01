@@ -1,6 +1,6 @@
 import requests
 
-lim_r = requests.get("https://api.openweathermap.org/data/2.5/weather?lat=49.7149918&lon=20.423074222125905&appid=90ceaeb4099970526efcc36abcb20e00")
+lim_r = requests.get("https://api.openweathermap.org/data/2.5/weather?q=Limanowa&appid=2dfa06232a76a512303f51ae8a5af464&units=metric")
 
 data = lim_r.json()
 weath_lim = {'Temperature':'', "Feels like":'', "Temperature min":'', "Temperature max":'',"Pressure":'',"Humidity":''}
@@ -11,9 +11,9 @@ sunrise = data["sys"]["sunrise"]
 sunset = data["sys"]["sunset"]
 
 ######################## wyciąganie danych pogodowych#################################
-for idx, x in enumerate(weath_lim_num):
-    if idx == 0 or idx == 1 or idx == 2 or idx == 3:
-        weath_lim_num[x] = round(weath_lim_num[x]-272.15, 1 )
+#for idx, x in enumerate(weath_lim_num):
+ #   if idx == 0 or idx == 1 or idx == 2 or idx == 3:
+  #      weath_lim_num[x] = round(weath_lim_num[x]-272.15, 1 )
   
  
 # zamiana na string + dodanie jednostek
